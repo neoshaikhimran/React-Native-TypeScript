@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29231170427",
+    "project_id": "emailverify-41cd1",
+    "storage_bucket": "emailverify-41cd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29231170427:android:0875ea26411a0fd753b3de",
+        "android_client_info": {
+          "package_name": "com.demopostapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29231170427-me68360tvjg6th4pqpjphrei3ht5msv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLPz3oXlAHGYvWKmyNcg-39cvjm13XTCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29231170427-me68360tvjg6th4pqpjphrei3ht5msv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
