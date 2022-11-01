@@ -28,7 +28,7 @@ const Register = () => {
   const [checked, setChecked] = useState();
   const [userEmail, setUserEmail] = useState('');
   const [phoneno, setPhoneno] = useState('');
-  const [userAddress, setUserAddress] = useState('');
+  const [emptyerror, setEmptyerror] = useState(false);
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [userErr,setUserErr]=React.useState(false);
@@ -86,9 +86,39 @@ const Register = () => {
   }
 
   const checkempty =()=>{
-    if(userEmail===" ")
+    if(!firstName.trim())
     {
-      console.log("Please fill the detail")
+      setEmptyerror(true)
+      console.log("Please fill the First Name")
+    }
+    else if(!lastName.trim()){
+      setEmptyerror(true)
+      console.log("Please fill the Last Name")
+    }
+
+    else if(!phoneno.trim()){
+      setEmptyerror(true)
+      console.log("Please fill the Phone no")
+    }
+    else if(!userEmail.trim()){
+      setEmptyerror(true)
+      console.log("Please fill the Email")
+    }
+    else if(!userPassword.trim()){
+      setEmptyerror(true)
+      console.log("Please fill the Password")
+    }
+    else if(!confirmPassword.trim()){ 
+
+      setEmptyerror(true)
+      console.log("Please fill the Confirm Password")
+    }
+  
+    else{
+      setEmptyerror(false)
+      console.log(false,"empty")
+      registerUser(userEmail, userPassword , firstName ,lastName,phoneno);
+
     }
   }
   const showDatePicker = () => {
@@ -234,6 +264,8 @@ function confirmpasscheck(k){
 }
 
 
+
+
       return (
         <ScrollView>
    
@@ -259,7 +291,9 @@ function confirmpasscheck(k){
               returnKeyType="next"
               blurOnSubmit={false}
             />
+            
           </View>
+          <Text>{emptyerror?<Text style={styles.Errortext}>Please fill first Name</Text>:""}</Text>
           <Text>{userErr?<Text style={styles.Errortext}>First Name Should be more than 3 Character</Text>:""}</Text> 
           <Text>{userErrone? <Text style={styles.Errortext}>Please Enter Only Characters</Text>:" "}</Text>
           <Text style={styles.Labletext}>Last Name *</Text>
@@ -275,6 +309,7 @@ function confirmpasscheck(k){
               blurOnSubmit={false}
             />
           </View>
+          <Text>{emptyerror?<Text style={styles.Errortext}>Please fill Last Name</Text>:""}</Text>
           <Text>{userErrlast?<Text style={styles.Errortext}>Last Name Should be more than 3 Character</Text>:""}</Text>
           <Text>{userErrtwo? <Text style={styles.Errortext}>Please Enter Only Characters</Text>:" "}</Text>
           <Text style={styles.Labletext}>Phone Number *</Text>
@@ -289,6 +324,7 @@ function confirmpasscheck(k){
               maxLength={10}
             />
           </View>
+          <Text>{emptyerror?<Text style={styles.Errortext}>Please fill Phone no</Text>:""}</Text>
           <Text style={styles.Labletext}>Email *</Text>
           <View style={styles.SectionStyle}>
           <Icon name="envelope" size={25} color="#00008B" style={styles.icon}/>
@@ -303,7 +339,7 @@ function confirmpasscheck(k){
             />
           </View>
           <Text>{eamilErr?<Text style={styles.Errortext}>Please type Valid Email address</Text>:""}</Text>
-          
+          <Text>{emptyerror?<Text style={styles.Errortext}>Please fill Email</Text>:""}</Text>
           
           <Text style={styles.Labletext}>Gender</Text>
           
@@ -342,6 +378,7 @@ function confirmpasscheck(k){
           </View>
           <Text>{passErr?<Text style={styles.Errortext}>"Please type valid Password (Only accept characters, number and special character, required 1 min 
 number, special character, required)"</Text>:""}</Text> 
+          <Text>{emptyerror?<Text style={styles.Errortext}>Please fill Password</Text>:""}</Text>
           <Text style={styles.Labletext}>Confirm Password</Text>
           <View style={styles.SectionStyle}>
           <Icon name="lock" size={25} color="#00008B" style={styles.icon}/>
@@ -358,6 +395,7 @@ number, special character, required)"</Text>:""}</Text>
             />
           </View>
           <Text>{conpasserror?<Text style={styles.Errortext}>"Password Does Not Match"</Text>:""}</Text> 
+          <Text>{emptyerror?<Text style={styles.Errortext}>Please fill Confirm Password</Text>:""}</Text>
           <Text style={styles.Labletext}>Education * </Text>
           <View style={styles.SectionStyle}>
            
@@ -402,7 +440,7 @@ number, special character, required)"</Text>:""}</Text>
           <TouchableOpacity
             style={styles.buttonStyle}
             activeOpacity={0.5}
-            onPress={() => registerUser(userEmail, userPassword , firstName ,userAddress,userAge)}
+            onPress={() => checkempty()}
            // onPress={()=>checkempty}
             >
             <Text style={styles.buttonTextStyle}>REGISTER</Text>
