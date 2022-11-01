@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register Test1 test RegistercaseApp 1 1`] = `
+<KeyboardAvoidingView
+  enabled={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": 50,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../Src/assets/shark.jpeg",
+        }
+      }
+      style={
+        Object {
+          "height": 70,
+          "width": 100,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#483D8B",
+          "fontSize": 25,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Registration Form
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 40,
+        "marginLeft": 35,
+        "marginRight": 35,
+        "marginTop": 30,
+        "marginVertical": 40,
+      }
+    }
+  >
+    <TextInput
+      autoCapitalize="sentences"
+      blurOnSubmit={false}
+      onChangeText={[Function]}
+      placeholder="Enter Name"
+      placeholderTextColor="#00008B"
+      returnKeyType="next"
+      style={
+        Object {
+          "backgroundColor": "#87CEFA",
+          "borderColor": "#dadae8",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 50,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "height": 40,
+        "marginLeft": 35,
+        "marginRight": 35,
+        "marginTop": 30,
+        "marginVertical": 40,
+      }
+    }
+  >
+    <TextInput
+      blurOnSubmit={false}
+      keyboardType="email-address"
+      onChangeText={[Function]}
+      placeholder="Enter Email"
+      placeholderTextColor="#00008B"
+      returnKeyType="next"
+      style={
+        Object {
+          "backgroundColor": "#87CEFA",
+          "borderColor": "#dadae8",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 50,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "height": 40,
+        "marginLeft": 35,
+        "marginRight": 35,
+        "marginTop": 30,
+        "marginVertical": 40,
+      }
+    }
+  >
+    <TextInput
+      blurOnSubmit={false}
+      onChangeText={[Function]}
+      placeholder="Enter Password"
+      placeholderTextColor="#00008B"
+      returnKeyType="next"
+      secureTextEntry={true}
+      style={
+        Object {
+          "backgroundColor": "#87CEFA",
+          "borderColor": "#dadae8",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 50,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "height": 40,
+        "marginLeft": 35,
+        "marginRight": 35,
+        "marginTop": 30,
+        "marginVertical": 40,
+      }
+    }
+  >
+    <TextInput
+      blurOnSubmit={false}
+      keyboardType="numeric"
+      onChangeText={[Function]}
+      placeholder="Enter Age"
+      placeholderTextColor="#00008B"
+      returnKeyType="next"
+      style={
+        Object {
+          "backgroundColor": "#87CEFA",
+          "borderColor": "#dadae8",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 50,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "height": 40,
+        "marginLeft": 35,
+        "marginRight": 35,
+        "marginTop": 30,
+        "marginVertical": 40,
+      }
+    }
+  >
+    <TextInput
+      autoCapitalize="sentences"
+      blurOnSubmit={false}
+      onChangeText={[Function]}
+      onSubmitEditing={[Function]}
+      placeholder="Enter Address"
+      placeholderTextColor="#00008B"
+      returnKeyType="next"
+      style={
+        Object {
+          "backgroundColor": "#87CEFA",
+          "borderColor": "#dadae8",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 50,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+        }
+      }
+    />
+  </View>
+  <TouchableOpacity
+    activeOpacity={0.5}
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#483D8B",
+        "borderRadius": 30,
+        "color": "#FFFFFF",
+        "fontWeight": "bold",
+        "height": 50,
+        "marginLeft": 35,
+        "marginRight": 35,
+        "marginTop": 30,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "paddingVertical": 15,
+        }
+      }
+    >
+      REGISTER
+    </Text>
+  </TouchableOpacity>
+</KeyboardAvoidingView>
+`;

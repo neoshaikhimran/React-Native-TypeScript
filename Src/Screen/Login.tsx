@@ -10,29 +10,34 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+//import { useNavigation } from "@react-navigation/native";
 import { firebase } from "../Auth/config";
  
-const Login =()=> {
+const Login =({navigation})=> {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userErr,setUserErr]=React.useState(false);
   const [passErr,setPassErr]=React.useState(false);
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
 
   function userHandler(e){
-    let regex =/^[a-zA-Z]{1,}?([a-zA-Z1-9]{1,})?([_])?([.])?([a-zA-Z1-9]{1,})?([.])?([a-zA-Z1-9]{1,})[@]?([a-z]{1,})?([.])?([a-z]{1,})?([.])?([a-z]{1,})$/;
-    
-    if (regex.test(e) )  
+   let re = /\S+@\S+\.\S+/;
+   let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+   setEmail(e);
+   if (re.test(e) || regex.test(e))
+     
     {
-       setUserErr(true)
+      setUserErr(false)
+      console.log('false')
     }
     else
     {
-        setUserErr(false)
+      setUserErr(true)
+      console.log('true')
+        
     }
-    setEmail(email)
-}
+  }
 
 function passwordHandler(f){
   
@@ -49,19 +54,24 @@ function passwordHandler(f){
 
 }
 
+
+
   loginUser = async (email,password) =>{
+   
 
     try{
       await firebase.auth().signInWithEmailAndPassword(email,password)
         
       } catch(error){
+      
        alert(error.message)
        console.log("Email not accepted")
+      
     }
   
 
   }
-
+  
 
   return (
     <View style={styles.container}>
@@ -74,10 +84,11 @@ function passwordHandler(f){
           placeholderTextColor="#00008B"
           onChangeText={(e)=>userHandler(e)}
         />
-        
+       
       </View>
+      <Text>{userErr?<Text style={styles.Errortext}>user not Valid</Text>:""}</Text>
 
-        <Text>{userErr?<Text style={styles.Errortext}>user not Valid</Text>:""}</Text>
+        
  
       <View style={styles.inputView}>
         <TextInput
@@ -128,6 +139,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 20,
+   // marginBottom:24
   },
  
   forgot_button: {
@@ -155,6 +167,7 @@ const styles = StyleSheet.create({
     color:'red',
     fontSize:15,
     fontWeight:'bold',
+    
     
   }
 });

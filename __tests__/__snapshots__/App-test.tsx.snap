@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Test1 test caseApp 1 1`] = `
+<ForwardRef(NavigationContainerInner)>
+  <MyStack />
+</ForwardRef(NavigationContainerInner)>
+`;
