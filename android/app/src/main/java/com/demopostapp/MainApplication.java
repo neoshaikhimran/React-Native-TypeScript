@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 import com.demopostapp.newarchitecture.MainApplicationReactNativeHost;
 import com.oblador.vectoricons.VectorIconsPackage;
 import java.lang.reflect.InvocationTargetException;
+import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -30,6 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           // packages.add(new VectorIconsPackage());
+         // packages.add(new RNDateTimePickerPackage());
           return packages;
         }
 
