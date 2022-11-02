@@ -10,6 +10,7 @@ import {
   Keyboard,
   TouchableOpacity,
   Alert,
+  Platform,
   
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -17,7 +18,12 @@ import { firebase } from "../Auth/config";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { RadioButton,Checkbox, Modal } from 'react-native-paper';
 import { Dropdown } from 'react-native-element-dropdown';
-import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import { Button } from 'react-native'
+// import DateTimePickerModal from 'react-native-modal-datetime-picker';
+//import DateTimePicker from 'react-native-date-picker'
+//import DateTimePicker from '@react-native-community/datetimepicker';
+import { event } from 'react-native-reanimated';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
  
 
 
@@ -39,8 +45,17 @@ const Register = () => {
   const [passErr,setPassErr]=React.useState(false);
   const [conpasserror, setConpasserror]=React.useState(false)
   const [value, setValue] = useState(null);
-  const[ShowModal, setShowModal]=useState(false);
-  const [datetext, setDateText] = useState('');
+  const [text, setText] = useState('Selct Your Date of Birth');
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
   
  
   const data = [
@@ -121,14 +136,7 @@ const Register = () => {
 
     }
   }
-  const showDatePicker = () => {
-    setShowModal(true);
-  };
-
-  const hideDatePicker = () => {
-    setShowModal(false);
-  };
-
+  
   const handleConfirm = date=> {
     let current = new Date();
     let todaysDate =
@@ -140,11 +148,11 @@ const Register = () => {
 
     let dateTimeString =
       date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
-    if (todaysDate === datetext) {
-      setDateText('');
+    if (todaysDate === text) {
+      setText('');
       Alert.alert('Date of birth should be less than current date');
     } else {
-      setDateText(dateTimeString);
+      setText(dateTimeString);
     }
 
     hideDatePicker();
@@ -421,20 +429,18 @@ number, special character, required)"</Text>:""}</Text>
           <Text style={styles.Labletext}>Date Of Birth</Text>
           <View style={styles.SectionStyle}>
           
-           <TouchableOpacity onPress={()=> showDatePicker()}>
-            <Text>
-              {datetext}
-            </Text>
           
-          
-           <DateTimePickerModal
-                      isVisible={ShowModal}
+            <TouchableOpacity onPress={showDatePicker}>
+                  <View >
+                    <Text style={styles.Datetext}>{text}</Text>
+                    <DateTimePickerModal
+                      isVisible={isDatePickerVisible}
                       mode="date"
                       onConfirm={handleConfirm}
                       onCancel={hideDatePicker}
                     />
-          </TouchableOpacity>
-
+                  </View>
+                </TouchableOpacity>
           </View>
           
           <TouchableOpacity
@@ -518,7 +524,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
   alignItems:'center',
   marginLeft:20
-  //justifyContent:'center',
+  
   
   },
   gender:{
@@ -544,6 +550,14 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     
     
+  },
+  Datetext:{
+    fontSize:15,
+    fontWeight:'bold',
+    justifyContent:'center',
+    textAlign:'center',
+    padding:14,
+    color:'black'
   }
  
 });

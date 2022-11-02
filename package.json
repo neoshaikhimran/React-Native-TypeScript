@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^6.5.3",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-firebase/app": "^16.0.0",
     "@react-navigation/native": "^6.0.13",
@@ -23,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-native": "0.70.3",
     "react-native-calendars": "^1.1291.0",
+    "react-native-date-picker": "^4.2.5",
     "react-native-element-dropdown": "^2.3.1",
     "react-native-gesture-handler": "^2.7.1",
     "react-native-material-dropdown": "^0.11.1",
